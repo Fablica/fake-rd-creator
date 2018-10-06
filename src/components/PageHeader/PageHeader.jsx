@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, Container, Image } from "semantic-ui-react";
+import { Menu, Image } from "semantic-ui-react";
 
 const PageHeader = () => {
   return (
