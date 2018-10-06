@@ -1,29 +1,25 @@
 import React from 'react';
 import { Step } from "semantic-ui-react";
 
-const StepHeader = () => {
+const StepHeader = ({ showStepCategory, ChangeShowStepper }) => {
   return (
     <Step.Group ordered>
-    <Step completed={false} onClick={() => console.log("sec1")}>
+    <Step active={ showStepCategory === "step1" ? true : false} onClick={() => ChangeShowStepper("step1")}>
       <Step.Content>
-        <Step.Title>Shipping</Step.Title>
-        <Step.Description>Choose your shipping options</Step.Description>
+        <Step.Title>Step1</Step.Title>
+        <Step.Description>Select Table</Step.Description>
       </Step.Content>
     </Step>
-    <Step completed={false} onClick={() => console.log("sec2")}>
+    <Step active={ showStepCategory === "step2" ? true : false} onClick={() => ChangeShowStepper("step2")}>
       <Step.Content>
-        <Step.Title>Billing</Step.Title>
-        <Step.Description>Enter billing information</Step.Description>
+        <Step.Title>Step2</Step.Title>
+        <Step.Description>Select Column</Step.Description>
       </Step.Content>
     </Step>
-    <Step completed={false} onClick={() => console.log("sec3")}>
+    <Step active={ showStepCategory === "step3" ? true : false} onClick={() => ChangeShowStepper("step3")}>
       <Step.Content>
-        <Step.Title>Confirm Order</Step.Title>
-      </Step.Content>
-    </Step>
-    <Step completed={false} onClick={() => console.log("sec4")}>
-      <Step.Content>
-        <Step.Title>Confirm Order</Step.Title>
+        <Step.Title>Step3</Step.Title>
+        <Step.Description>Select File Type</Step.Description>
       </Step.Content>
     </Step>
   </Step.Group>
