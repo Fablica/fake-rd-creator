@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Checkbox, Button } from "semantic-ui-react";
+import { Dropdown, Menu, Table, Checkbox, Button } from "semantic-ui-react";
 
 const SelectedFileTypeForm = ({outputFileTypes, lineLength, ChangeSelectedFileType, ClickGenerateButton}) => {
   return (
@@ -28,6 +28,9 @@ const SelectedFileTypeForm = ({outputFileTypes, lineLength, ChangeSelectedFileTy
         </Table.Body>
       </Table>
       <br/>
+      {/* <Menu compact>
+        <Dropdown text='To create 1 lines' options={options} simple item />
+      </Menu> */}
       <Button disabled={!outputFileTypes.length >= 1} color='red' onClick={() => ClickGenerateButton()}>GENERATE</Button>
     </div>
   );

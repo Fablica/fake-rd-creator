@@ -40,7 +40,7 @@ class HomePage extends Component {
     showStepCategory: "step1",
     openedAccordionItem: "",
     outputFileTypes: [],
-    lineLength: 1,
+    lineLength: 1000,
   };
 
   handleChangeShowStepper = selectedStep => {
