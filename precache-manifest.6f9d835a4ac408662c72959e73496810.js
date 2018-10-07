@@ -60,16 +60,16 @@ self.__precacheManifest = [
     "url": "/fake-rd-creator/static/media/outline-icons.82f60bd0.svg"
   },
   {
-    "revision": "962a1bf31c081691065fe333d9fa8105",
-    "url": "/fake-rd-creator/static/media/icons.962a1bf3.svg"
-  },
-  {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
     "url": "/fake-rd-creator/static/media/brand-icons.13db00b7.eot"
   },
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
     "url": "/fake-rd-creator/static/media/brand-icons.e8c322de.woff2"
+  },
+  {
+    "revision": "962a1bf31c081691065fe333d9fa8105",
+    "url": "/fake-rd-creator/static/media/icons.962a1bf3.svg"
   },
   {
     "revision": "a046592bac8f2fd96e994733faf3858c",
