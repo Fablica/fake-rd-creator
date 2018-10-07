@@ -4,6 +4,7 @@ import StepHeader from "../StepHeader/StepHeader";
 import SelectedTableForm from "../SelectedTableForm/SelectedTableForm";
 import SelectedColumnForm from "../SelectedColumnForm/SelectedColumnForm";
 import SelectedFileTypeForm from "../SelectedFileTypeForm/SelectedFileTypeForm";
+import { generateData } from "../../helpers/generateData";
 
 class HomePage extends Component {
   state = {
@@ -11,12 +12,9 @@ class HomePage extends Component {
       // ユーザ一覧
       users: {
         createFlg: false,
-        lineLength: 1,
         column: {
           userId: false, // random.uuid
-          fullName: false, // name.firstName
-          firstName: false, // name.lastName
-          lastName: false, // firstName + " " + lastName
+          fullName: false, // name.firstName + " " + name.lastName
           loginId: false, // internet.userName
           password: false, // internet.password
           avatarURL: false, // internet.avatar
@@ -29,7 +27,6 @@ class HomePage extends Component {
       // 投稿
       posts: {
         createFlg: false,
-        lineLength: 1,
         column: {
           userId: false, // random.uuid(usersの)
           postId: false, // random.uuid
@@ -42,7 +39,8 @@ class HomePage extends Component {
     },
     showStepCategory: "step1",
     openedAccordionItem: "",
-    outputFileTypes: []
+    outputFileTypes: [],
+    lineLength: 1,
   };
 
   handleChangeShowStepper = selectedStep => {
@@ -105,6 +103,41 @@ class HomePage extends Component {
     }
   };
 
+  handleOnClickGenerateButton = () => {
+    let tableList = generateData(this.state.lineLength, this.state.createTableDetailed)
+    let fileLink = document.createElement("a");
+    if(this.state.outputFileTypes.indexOf("JSON") >= 0) {
+      for(let i in tableList) {
+        fileLink.href = "data:text/json;charset=utf-8;base64," + window.btoa(unescape(encodeURIComponent(JSON.stringify(tableList[i]))));
+        fileLink.target = "_blank";
+        fileLink.download = `${i}.json`;
+        document.body.appendChild(fileLink);
+        fileLink.click();
+        fileLink.parentNode.removeChild(fileLink);
+      }
+    }
+    if(this.state.outputFileTypes.indexOf("CSV") >= 0) {
+      let header = null;
+      let body = null;
+      for(let i in tableList) {
+        header = Object.keys(tableList[i][0]).join(',') + "\n";
+        body = tableList[i].map(function(d) {
+          return Object.keys(d).map(function(key) {
+              return d[key];
+          }).join(',');
+        }).join("\n");
+        
+        fileLink.href = "data:text/csv;charset=utf-8;base64," + window.btoa(unescape(encodeURIComponent(header + body)));
+        fileLink.target = "_blank";
+        fileLink.download = `${i}.csv`;
+        document.body.appendChild(fileLink);
+        fileLink.click();
+        fileLink.parentNode.removeChild(fileLink);
+      }
+    }
+
+  };
+
   render() {
     return (
       <div>
@@ -125,7 +158,9 @@ class HomePage extends Component {
         ) : (
           <SelectedFileTypeForm
             outputFileTypes={this.state.outputFileTypes}
+            lineLength={this.state.lineLength}
             ChangeSelectedFileType={this.handleChangeSelectedFileType}
+            ClickGenerateButton={this.handleOnClickGenerateButton}
           />
         )}
       </div>

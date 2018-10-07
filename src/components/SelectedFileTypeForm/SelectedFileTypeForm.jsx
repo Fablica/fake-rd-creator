@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Checkbox, Button } from "semantic-ui-react";
 
-const SelectedFileTypeForm = ({outputFileTypes, ChangeSelectedFileType}) => {
+const SelectedFileTypeForm = ({outputFileTypes, lineLength, ChangeSelectedFileType, ClickGenerateButton}) => {
   return (
     <div>
       <Table color="red">
@@ -28,7 +28,7 @@ const SelectedFileTypeForm = ({outputFileTypes, ChangeSelectedFileType}) => {
         </Table.Body>
       </Table>
       <br/>
-      <Button color='red'>GENERATE</Button>
+      <Button disabled={!outputFileTypes.length >= 1} color='red' onClick={() => ClickGenerateButton()}>GENERATE</Button>
     </div>
   );
 };
