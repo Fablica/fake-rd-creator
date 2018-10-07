@@ -75,6 +75,18 @@ class HomePage extends Component {
     });
   };
 
+  handleChangeSelectedColumn = (selectedTable, selectedColumn) => {
+    let changedCreateTableDetailed = this.state.createTableDetailed;
+    if(this.state.createTableDetailed[selectedTable].column[selectedColumn] !== false) {
+      changedCreateTableDetailed[selectedTable].column[selectedColumn] = false;
+    } else {
+      changedCreateTableDetailed[selectedTable].column[selectedColumn] = true;
+    }
+    this.setState({
+      createTableDetailed: changedCreateTableDetailed
+    });
+  };
+
   handleChangeSelectedFileType = selectedFileType => {
     if (this.state.outputFileTypes.indexOf(selectedFileType) >= 0) {
       let filteredFileTypes = this.state.outputFileTypes.filter(fileType => {
@@ -105,8 +117,10 @@ class HomePage extends Component {
           <SelectedTableForm createTableDetailed={this.state.createTableDetailed} ChangeSelectedTable={this.handleChangeSelectedTable} />
         ) : this.state.showStepCategory === "step2" ? (
           <SelectedColumnForm
+            createTableDetailed={this.state.createTableDetailed}
             openedAccordionItem={this.state.openedAccordionItem}
             ChangeOpenAccordion={this.handleChangeOpenAccordion}
+            ChangeSelectedColumn={this.handleChangeSelectedColumn}
           />
         ) : (
           <SelectedFileTypeForm
