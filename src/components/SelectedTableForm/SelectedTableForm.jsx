@@ -1,7 +1,8 @@
 import React from "react";
 import { Table, Checkbox } from "semantic-ui-react";
 
-const SelectedTableForm = () => {
+const SelectedTableForm = ({ createTableDetailed, ChangeSelectedTable }) => {
+  console.log(createTableDetailed)
   return (
     <div>
       <Table color="red">
@@ -11,20 +12,15 @@ const SelectedTableForm = () => {
             <Table.HeaderCell>Table</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
-
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              <Checkbox slider onChange={() => console.log("hoge")} />
-            </Table.Cell>
-            <Table.Cell>Table1</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              <Checkbox slider onChange={() => console.log("hoge")} />
-            </Table.Cell>
-            <Table.Cell>Table2</Table.Cell>
-          </Table.Row>
+          {Object.keys(createTableDetailed).map((table, index) => (
+            <Table.Row key={index}>
+              <Table.Cell>
+                <Checkbox slider checked={createTableDetailed[table].createFlg} onChange={() => ChangeSelectedTable(table)} />
+              </Table.Cell>
+              <Table.Cell>{table}</Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     </div>
