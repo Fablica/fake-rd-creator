@@ -1,0 +1,8 @@
+{
+  "short_name": "fake-rb-creator",
+  "name": "fake-rb-creator",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
