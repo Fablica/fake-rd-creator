@@ -1,16 +1,16 @@
 {
   "main.css": "/fake-rd-creator/static/css/main.a35a7da4.chunk.css",
-  "main.js": "/fake-rd-creator/static/js/main.f220cd46.chunk.js",
-  "main.js.map": "/fake-rd-creator/static/js/main.f220cd46.chunk.js.map",
+  "main.js": "/fake-rd-creator/static/js/main.3f8b99fd.chunk.js",
+  "main.js.map": "/fake-rd-creator/static/js/main.3f8b99fd.chunk.js.map",
   "static/css/1.67b1bc08.chunk.css": "/fake-rd-creator/static/css/1.67b1bc08.chunk.css",
   "static/js/1.65af0b2b.chunk.js": "/fake-rd-creator/static/js/1.65af0b2b.chunk.js",
   "static/js/1.65af0b2b.chunk.js.map": "/fake-rd-creator/static/js/1.65af0b2b.chunk.js.map",
   "runtime~main.js": "/fake-rd-creator/static/js/runtime~main.9767e3d3.js",
   "runtime~main.js.map": "/fake-rd-creator/static/js/runtime~main.9767e3d3.js.map",
-  "static/media/semantic.min.css": "/fake-rd-creator/static/media/brand-icons.a1a749e8.svg",
-  "static/css/main.a35a7da4.chunk.css.map": "/fake-rd-creator/static/css/main.a35a7da4.chunk.css.map",
+  "static/media/semantic.min.css": "/fake-rd-creator/static/media/outline-icons.ad97afd3.ttf",
   "static/css/1.67b1bc08.chunk.css.map": "/fake-rd-creator/static/css/1.67b1bc08.chunk.css.map",
+  "static/css/main.a35a7da4.chunk.css.map": "/fake-rd-creator/static/css/main.a35a7da4.chunk.css.map",
   "index.html": "/fake-rd-creator/index.html",
-  "precache-manifest.654ffa97c97b26e95eac9e2f9a2ddd15.js": "/fake-rd-creator/precache-manifest.654ffa97c97b26e95eac9e2f9a2ddd15.js",
+  "precache-manifest.733c55f8a262cfbeb92813913c2ca1a0.js": "/fake-rd-creator/precache-manifest.733c55f8a262cfbeb92813913c2ca1a0.js",
   "service-worker.js": "/fake-rd-creator/service-worker.js"
 }
