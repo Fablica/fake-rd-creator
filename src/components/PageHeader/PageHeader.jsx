@@ -5,10 +5,10 @@ import { Menu, Image } from "semantic-ui-react";
 const PageHeader = () => {
   return (
     <Menu fixed="top" inverted>
-      <Menu.Item as={Link} to="/" header style={{ marginLeft: "0.5em" }}>
+      <Menu.Item as={Link} to="/fake-rd-creator" header style={{ marginLeft: "0.5em" }}>
         TOP
       </Menu.Item>
-      <Menu.Item as={Link} to="/home">
+      <Menu.Item as={Link} to="/fake-rd-creator/home">
         Home
       </Menu.Item>
       <Menu.Item position="right">
