@@ -9,7 +9,7 @@ const TopPage = () => {
           <div className="content">fake-rd-creator</div>
         </h1>
         <br />
-        <Link className="ui huge white inverted button" to="/home">
+        <Link className="ui huge white inverted button" to="/fake-rd-creator/home">
           Get Started
           <i className="right arrow icon" />
         </Link>
