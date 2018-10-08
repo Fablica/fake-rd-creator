@@ -1,7 +1,7 @@
 {
   "name": "fake-rb-creator",
   "version": "0.1.0",
-  "homepage": "http://Kento75.github.io/fake-rd-creator",
+  "homepage": "http://Kento75.github.io/fake-rd-creator/",
   "private": true,
   "dependencies": {
     "faker": "^4.1.0",

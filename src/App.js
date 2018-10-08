@@ -14,7 +14,7 @@ class App extends Component {
         <div>
           <PageHeader />
           <Switch>
-            <Route exact path="/" component={TopPage} />
+            <Route exact path="/fake-rd-creator" component={TopPage} />
             <Route path="/home" component={HomePage} />
             <Route component={NotFoundPage} />
           </Switch>
