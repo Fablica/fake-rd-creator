@@ -5,6 +5,7 @@ import SelectedTableForm from "../SelectedTableForm/SelectedTableForm";
 import SelectedColumnForm from "../SelectedColumnForm/SelectedColumnForm";
 import SelectedFileTypeForm from "../SelectedFileTypeForm/SelectedFileTypeForm";
 import { generateData } from "../../helpers/generateData";
+import SocialModal from "../SocialModal/SocialModal";
 
 class HomePage extends Component {
   state = {
@@ -41,6 +42,7 @@ class HomePage extends Component {
     openedAccordionItem: "",
     outputFileTypes: [],
     lineLength: 1000,
+    showSocialDialog: false
   };
 
   handleChangeShowStepper = selectedStep => {
@@ -135,13 +137,23 @@ class HomePage extends Component {
         fileLink.parentNode.removeChild(fileLink);
       }
     }
-
+    // Show Social Dialog
+    this.setState({
+      showSocialDialog: true
+    });
   };
+
+  handleOnClickSocialButton = () => {
+    this.setState({
+      showSocialDialog: false
+    });
+  }
 
   render() {
     return (
       <div>
         <h1>HomePage</h1>
+        <SocialModal showSocialDialog={this.state.showSocialDialog} OnClickSocialButton={this.handleOnClickSocialButton} />
         <StepHeader
           showStepCategory={this.state.showStepCategory}
           ChangeShowStepper={this.handleChangeShowStepper}
