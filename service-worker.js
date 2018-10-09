@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/fake-rd-creator/precache-manifest.3f34caaf7ca518dfcff6648e2410e3ed.js"
+  "/fake-rd-creator/precache-manifest.f7fb40ace1574464e14234b9bc26e921.js"
 );
 
 workbox.clientsClaim();
